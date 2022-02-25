@@ -1,0 +1,58 @@
+---
+title: "The relationship between the national crime rate in the United States and race"
+author: "Kaidi Chen"
+date: "2/22/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+library(dplyr)
+library(knitr)
+library(ggplot2)
+library(data.table)
+#load the data having been cleaned
+source("../source/analysis.R")
+data <- data_access()
+```
+
+## Introduction
+In my report, I will examine the distribution of crime rates by state in the United States, the relationship between crime rates and population, and analyze the trends in crime rates by race over the 49 years from 1970 to 2018 based on the data loaded from Vera Institute. These research topics will mainly revolve around the variables of total population, total popution in jail, and the number of people in prisons of various ethnic groups. Definitely, these topics also need to include the two variables of state and year in the data.
+
+## Summary information
+
+```{r summary, echo=FALSE,warning=FALSE,results='asis'}
+summary(data)
+```
+
+From the summary information, we can see that in Washington state, the crime rate of blacks and whites is still relatively high, and the maximum number of prisoners is far higher than the other two races, so we can think about whether race and crime rate are related.
+
+## Chart1: Trends For Crime Rate of Different Races in US from 1970 to 2018
+
+**Purpose:** Showing different lines represented different races, the graph implies the population in jail  of different racial groups over time in US. 
+
+**Patterns:** We can see that in 1985, the crime rate of Asian Americans and Pacific Islanders, Black people and Latinx people all increased greatly. I guess that maybe more people from these three races immigrated to the United States at that time or maybe it was because of the racial movement at that time, etc. Additionally, I find that from 1985 to 2018, except for Asian Americans and Pacific Islanders and black people, the trend of crime rates for all ethnic groups is relatively flat. For people who are Asian Americans and Pacific Islanders, the crime rate is on the rise. For Black people, the crime rate is trending down. 
+
+```{r chart1, warning=FALSE,echo=FALSE}
+Chart1(data)
+```
+
+## Chart2: Relationship Between Jail Popultaion of White People and Jail Popultaion of Black People in US
+
+**Purpose:** I use scatter plot to show how jail population of white people and jail population of black people in US are related to one another.
+
+**Patterns:** I can see that as the number of whites in prisons increases, the number of blacks in prisons also increases, which means the two variables are positively correlated. Thus, I suggest that the contradiction may be due to the contradiction between the two races leading to mutual sentence, which also implies that there may be a problem of racial equality in society.
+
+```{r chart2, warning=FALSE,echo=FALSE,results='asis'}
+Chart2(data)
+```
+
+
+## Chart3: Black Jail Population compare Across Different States in 2018 in US
+
+**Purpose:** I use map to show how black Jail Population compare Across Different States in 2018 in US.
+
+**Patterns:** I can see that in 2018, there are a lot of black people in prisons in California and texas in the United States, and there are also many black people in prisons in New York and Florida in the east. It's possible that it's not because of race but because of security issues, and it's also possible that these two states have large number of black population.
+
+```{r chart3, warning=FALSE,echo=FALSE}
+Chart3(data)
+```
