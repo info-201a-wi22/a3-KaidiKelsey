@@ -27,6 +27,8 @@ summary(data)
 
 From the summary information, we can see that in Washington state, the crime rate of blacks and whites is still relatively high, and the maximum number of prisoners is far higher than the other two races, so we can think about whether race and crime rate are related.
 
+Additionally, I have used `nrow(data)` to find out the number of observations, which is `summary_info$num_observations`, and for the the number of variables `summary_info$num_variables` we used `ncol(data)`to obtain the output. The maximum population of black people in Washington prisons is stored in the variable `summary_info$max_pop_jail_black` .For the maximum population of white people in Washington prisons, the variable name is `summary_info$max_pop_jail_white`. Then for the the maximum population of Asian Americans and Pacific Islanders in Washington prisons, we have the independent variable `summary_info$max_pop_jail_aapi`, and we receive the the maximum population of latinx people in Washington prisons by `summary_info$max_pop_jail_latinx`.
+
 
 ## Chart1: Trends For Crime Rate of Different Races in US from 1970 to 2018
 
@@ -52,11 +54,11 @@ Chart2(data)
 
 
 
-## Chart3: Black Jail Population compare Across Different States in 2018 in US
+## Chart3: Total Jail Population compare Across Different States in 2018 in US
 
 **Purpose:** I use map to show how black Jail Population compare Across Different States in 2018 in US.
 
-**Patterns:** I can see that in 2018, there are a lot of black people in prisons in California and texas in the United States, and there are also many black people in prisons in New York and Florida in the east. It's possible that it's not because of race but because of security issues, and it's also possible that these two states have large number of black population.
+**Patterns:** I can see that in 2018, there are most people in prisons in California and texas in the United States, and there are also many people in prisons in New York and Florida in the east. It's possible that it's not because of race but because of security issues, and it's also possible that these two states have large number of population.
 
 ```{r chart3, warning=FALSE,echo=FALSE}
 Chart3(data)
