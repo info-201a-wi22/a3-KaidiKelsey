@@ -21,13 +21,15 @@ In my report, I will examine the distribution of crime rates by state in the Uni
 
 ## Summary information
 
+I have used `nrow(data)` to find out the number of observations, which is `summary_info$num_observations`, and for the the number of variables `summary_info$num_variables` we used `ncol(data)`to obtain the output. The maximum population of black people in Washington prisons is stored in the variable `summary_info$max_pop_jail_black` .For the maximum population of white people in Washington prisons, the variable name is `summary_info$max_pop_jail_white`. Then for the the maximum population of Asian Americans and Pacific Islanders in Washington prisons, we have the independent variable `summary_info$max_pop_jail_aapi`, and we receive the the maximum population of latinx people in Washington prisons by `summary_info$max_pop_jail_latinx`.
+
 ```{r summary, echo=FALSE,warning=FALSE,results='asis'}
 summary(data)
 ```
 
 From the summary information, we can see that in Washington state, the crime rate of blacks and whites is still relatively high, and the maximum number of prisoners is far higher than the other two races, so we can think about whether race and crime rate are related.
 
-Additionally, I have used `nrow(data)` to find out the number of observations, which is `summary_info$num_observations`, and for the the number of variables `summary_info$num_variables` we used `ncol(data)`to obtain the output. The maximum population of black people in Washington prisons is stored in the variable `summary_info$max_pop_jail_black` .For the maximum population of white people in Washington prisons, the variable name is `summary_info$max_pop_jail_white`. Then for the the maximum population of Asian Americans and Pacific Islanders in Washington prisons, we have the independent variable `summary_info$max_pop_jail_aapi`, and we receive the the maximum population of latinx people in Washington prisons by `summary_info$max_pop_jail_latinx`.
+
 
 
 ## Chart1: Trends For Crime Rate of Different Races in US from 1970 to 2018
