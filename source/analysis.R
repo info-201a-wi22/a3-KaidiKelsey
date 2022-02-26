@@ -80,7 +80,7 @@ Chart1 <- function(data){
   return(chart)
 }
 
-# Chart2: Relationship Between Jail Popultaion of White People and Jail Popultaion of Black People in US
+# Chart2: Relationship Between Jail Popultaion of White and Black People in US
 Chart2 <- function(data){
   US_data <- data %>%
     select("year","white_jail_pop","black_jail_pop")%>%
@@ -91,7 +91,7 @@ Chart2 <- function(data){
   chart <- ggplot(US_data, aes(x=white_jail_pop, y=black_jail_pop)) + 
     geom_point()+geom_smooth(formula =y~x, aes(x=white_jail_pop, y=black_jail_pop),method=lm, se = FALSE) + 
     ylab("jail popultaion of black people") + xlab("jail population of white people")+ 
-    ggtitle("Relationship Between Jail Popultaion of White People and Jail Popultaion of Black People in US")
+    ggtitle(" Relationship Between Jail Popultaion of White and Black People in US")
   efficient <- cor(US_data$white_jail_pop,US_data$black_jail_pop)
   return(chart)
 }
